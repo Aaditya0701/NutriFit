@@ -107,10 +107,10 @@ header nav ul li a.active {
     content:'';
     /* position: absolute; */
     position: fixed; 
-    top: 45px;
+    top: 40px;
     left: 0;
     background-image:url(src/images/watermark.jpg) ;
-    background-size: 800px;
+    background-size: 700px;
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
