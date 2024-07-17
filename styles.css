@@ -6,9 +6,12 @@
     list-style: none;
     box-sizing: border-box;
 }
+
 body {
     background: white;
+    margin-top: 70px;
 }
+
 header {
     background: #fff;
     width: 100%;
@@ -18,11 +21,17 @@ header {
     justify-content: space-between;
     padding: 0 50px;
     box-shadow: 0 4px 6px -1px rgba(32, 31, 31, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the header is above other content */
 }
+
 header .logo {
     font-size: 30px;
 }
-header .logo-img{
+
+header .logo-img {
     height: 70px;
     padding-top: 12px;
     margin-left: -30px;
@@ -31,6 +40,7 @@ header .logo-img{
 header nav ul {
     display: flex;
 }
+
 header nav ul li a {
     display: inline-block;
     color: #000;
@@ -40,29 +50,35 @@ header nav ul li a {
     text-transform: uppercase;
     transition: 0.2s;
 }
+
 header nav ul li a:hover,
 header nav ul li a.active {
-    border-bottom-color: rgb(71, 13, 42);
+    border-bottom-color: #f13737;
 }
+
 .hamburger {
     cursor: pointer;
     display: none;
 }
+
 .hamburger div {
     width: 30px;
     height: 3px;
     margin: 5px 0;
     background: #000;
 }
+
 @media only screen and (max-width: 900px) {
     header {
         padding: 0 30px;
     }
 }
+
 @media only screen and (max-width: 700px) {
     .hamburger {
         display: block;
     }
+
     header nav {
         position: absolute;
         width: 100%;
@@ -73,13 +89,48 @@ header nav ul li a.active {
         padding: 30px;
         transition: 0.3s;
     }
-    header #nav_check:checked ~ nav {
+
+    header #nav_check:checked~nav {
         left: 0;
     }
+
     header nav ul {
         display: block;
     }
+
     header nav ul li a {
         margin: 5px 0;
     }
+}
+
+.content-container::before{
+    content:'';
+    /* position: absolute; */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    background-image:url(src/images/watermark.jpg) ;
+    background-size: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    opacity: .3;
+    z-index: 2;
+}
+
+.content-container{
+    padding: 30px;
+    position: relative;
+}
+
+.content-container .contents{
+    position: relative;
+    z-index: 5;
+
+}
+
+.content-container p {
+    margin-top: 10px;
+    text-align: justify;
 }
